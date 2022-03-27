@@ -48,7 +48,7 @@ router.get('/csv', (ctx) => {
   ctx.response.body = 'blep.';
 });
 
-router.post('/csv', koaBody, async (ctx) => {
+router.post('/csv', koaBody, (ctx) => {
   // ctx.request.files
 
   ctx.res.body = ctx.req.files.path;
