@@ -1,0 +1,26 @@
+{
+	"name": "csv-something",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"author": "RayRemnant",
+	"license": "ISC",
+	"dependencies": {
+		"@koa/cors": "^3.1.0",
+		"@koa/router": "^9.4.0",
+		"koa": "^2.13.0",
+		"koa-bodyparser": "^4.3.0",
+		"koa-helmet": "^5.2.0",
+		"koa-router": "^9.4.0"
+	},
+	"scripts": {
+    "dev": "nodemon server.js",
+		"heroku-dev": "nodemon --exec 'heroku local' --signal SIGTERM"
+	},
+	"engines": {
+		"node": "14.x"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	}
+}
