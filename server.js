@@ -34,7 +34,7 @@ router.use(async (ctx, next) => {
 }); */
 
 router.get("/csv", (ctx) => {
-	ctx.response.body = lmao
+	ctx.response.body = "lmao"
 });
 
 
