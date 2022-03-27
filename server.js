@@ -36,12 +36,14 @@ router.use(async (ctx, next) => {
 let csv = ''
 
 router.get("/csv", (ctx) => {
+    console.log(csv)
 	ctx.response.body = csv
 });
 
 router.post("/csv", (ctx) => {
+    console.log(ctx.request.body)
     csv = ctx.request.body
-	ctx.response.body = ctx.request.body
+	ctx.response.body = csv
 });
 
 
