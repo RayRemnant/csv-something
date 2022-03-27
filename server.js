@@ -1,7 +1,7 @@
 const Koa = require("koa");
 const Router = require("@koa/router");
 const helmet = require("koa-helmet");
-const bodyParser = require("koa-bodyparser");
+const koaBody = require("koa-body");
 const cors = require("@koa/cors");
 
 const app = new Koa();
@@ -9,7 +9,7 @@ const router = new Router();
 
 app.use(cors());
 app.use(helmet());
-app.use(bodyParser({ multipart: true }));
+app.use(koaBody({ multipart: true }));
 
 
 router.get("/", (ctx) => {
