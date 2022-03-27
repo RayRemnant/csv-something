@@ -33,18 +33,17 @@ router.use(async (ctx, next) => {
 	await next();
 }); */
 
-let csv = ''
-
 router.get("/csv", (ctx) => {
-    console.log(csv)
-	ctx.response.body = JSON.stringify(csv) 
+	ctx.response.body = 'blep.'
 });
 
 router.post("/csv", (ctx) => {
-    csv = ctx.req.body
-	ctx.response.body = JSON.stringify(ctx.request.body)
+	ctx.response.body = JSON.stringify(ctx.request.files)
 });
 
+router.post("/formData", (ctx) => {
+	ctx.response.body = JSON.stringify(ctx.request.body)
+});
 
 router.use((ctx) => {
 	ctx.response.status = 404;
