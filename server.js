@@ -10,8 +10,6 @@ const router = new Router();
 app.use(cors());
 app.use(helmet());
 app.use(bodyParser({
-    formidable:{uploadDir: './uploads'},
-    multipart: true,
     urlencoded: true
  }));
 
