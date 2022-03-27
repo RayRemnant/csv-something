@@ -33,8 +33,15 @@ router.use(async (ctx, next) => {
 	await next();
 }); */
 
+let csv = ''
+
 router.get("/csv", (ctx) => {
-	ctx.response.body = "lmao"
+	ctx.response.body = csv
+});
+
+router.post("/csv", (ctx) => {
+    csv = ctx.request.body
+	ctx.response.body = ctx.request.body
 });
 
 
@@ -49,6 +56,6 @@ app.on("error", (e) => {
 });
 
 // PORT
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3003;
 app.listen(port, () => {});
 console.log("listening on port " + port);
