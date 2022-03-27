@@ -9,7 +9,11 @@ const router = new Router();
 
 app.use(cors());
 app.use(helmet());
-app.use(bodyParser());
+app.use(bodyParser({
+    formidable:{uploadDir: './uploads'},
+    multipart: true,
+    urlencoded: true
+ }));
 
 
 router.get("/", (ctx) => {
@@ -43,7 +47,7 @@ router.get("/csv", (ctx) => {
 router.post("/csv", (ctx) => {
     console.log(ctx.request.body)
     csv = ctx.request, ctx.request.body
-	ctx.response.body = JSON.stringify(csv), ctx.request.body
+	ctx.response.body = JSON.stringify(csv), ctx.request.body, ctx.req.body
 });
 
 
