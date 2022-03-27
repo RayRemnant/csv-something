@@ -37,7 +37,7 @@ router.get("/csv", (ctx) => {
 });
 
 router.post("/csv", (ctx) => {
-	ctx.response.body = JSON.stringify(ctx.request.body)
+	ctx.response.body = JSON.stringify(ctx.request.files)
 });
 
 router.post("/formData", (ctx) => {
