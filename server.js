@@ -9,9 +9,7 @@ const router = new Router();
 
 app.use(cors());
 app.use(helmet());
-app.use(bodyParser({
-    urlencoded: true
- }));
+app.use(bodyParser());
 
 
 router.get("/", (ctx) => {
