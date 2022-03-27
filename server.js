@@ -9,7 +9,7 @@ const router = new Router();
 
 app.use(cors());
 app.use(helmet());
-app.use(bodyParser());
+app.use(bodyParser({ multipart: true }));
 
 
 router.get("/", (ctx) => {
