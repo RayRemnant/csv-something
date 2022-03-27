@@ -51,7 +51,7 @@ router.get('/csv', (ctx) => {
 router.post('/csv', koaBody, (ctx) => {
   // ctx.request.files
 
-  ctx.response.body = ctx.request.files;
+  ctx.response.body = ctx.request.files.csv.path;
   // const myCsv = await parseCsv(ctx.request.files.path);
 
   // ctx.response.body = JSON.stringify(myCsv);
