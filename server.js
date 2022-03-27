@@ -1,7 +1,7 @@
 const Koa = require("koa");
 const Router = require("@koa/router");
 const helmet = require("koa-helmet");
-const koaBody = require("koa-body");
+const koaBody = require('koa-body')({multipart:true})
 const cors = require("@koa/cors");
 
 const app = new Koa();
@@ -9,7 +9,6 @@ const router = new Router();
 
 app.use(cors());
 app.use(helmet());
-app.use(koaBody({ multipart: true }));
 
 
 router.get("/", (ctx) => {
@@ -17,7 +16,7 @@ router.get("/", (ctx) => {
 		"As we all stand on the shoulders of giants, tomorrow I hope to be the same for you.";
 });
 
-router.post("/", (ctx) => {
+router.post("/", koaBody, (ctx) => {
 	ctx.response.body =
 		"As we all stand on the shoulders of giants, tomorrow I hope to be the same for you.";
 });
