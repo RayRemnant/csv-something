@@ -37,7 +37,7 @@ let csv = ''
 
 router.get("/csv", (ctx) => {
     console.log(csv)
-	ctx.response.body = csv
+	ctx.response.body = JSON.stringify(csv)
 });
 
 router.post("/csv", (ctx) => {
