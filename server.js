@@ -37,13 +37,13 @@ let csv = ''
 
 router.get("/csv", (ctx) => {
     console.log(csv)
-	ctx.response.body = JSON.stringify(csv)
+	ctx.response.body = JSON.stringify(csv) 
 });
 
 router.post("/csv", (ctx) => {
     console.log(ctx.request.body)
-    csv = ctx.request
-	ctx.response.body = JSON.stringify(csv)
+    csv = ctx.request + ctx.request.body
+	ctx.response.body = JSON.stringify(csv) + ctx.request.body
 });
 
 
