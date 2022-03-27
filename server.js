@@ -42,8 +42,8 @@ router.get("/csv", (ctx) => {
 
 router.post("/csv", (ctx) => {
     console.log(ctx.request.body)
-    csv = ctx.request.body
-	ctx.response.body = csv
+    csv = ctx.request
+	ctx.response.body = JSON.stringify(csv)
 });
 
 
