@@ -10,7 +10,7 @@ const router = new Router();
 app.use(cors());
 app.use(helmet());
 
-const fs = require('fs');
+/* const fs = require('fs');
 const csv = require('csv-parser');
 
 function parseCsv(filePath) {
@@ -23,7 +23,7 @@ function parseCsv(filePath) {
           resolve(results);
         });
   });
-}
+} */
 
 router.get('/', (ctx) => {
   ctx.response.body = 'As we all stand on the shoulders of giants, tomorrow I hope to be the same for you.';
@@ -51,7 +51,7 @@ router.get('/csv', (ctx) => {
 router.post('/csv', koaBody, (ctx) => {
   // ctx.request.files
 
-  ctx.res.body = ctx.req.files.path;
+  ctx.response.body = ctx.request.files;
   // const myCsv = await parseCsv(ctx.request.files.path);
 
   // ctx.response.body = JSON.stringify(myCsv);
